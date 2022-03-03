@@ -1,0 +1,96 @@
+.cards-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.card {
+    width: 20rem;
+    height: 14rem;
+    margin-bottom: 2rem;
+}
+
+.add-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.3s !important;
+}
+
+.add-card:hover {
+    opacity: 1;
+}
+
+.card .header {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card .body {
+    padding: 1rem;
+}
+
+.card .header-fail {
+    background-color: #8B303F;
+}
+
+.card .header-ok {
+    background-color: #2CA06C;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.buttons-wrapper {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons-wrapper button {
+    color: white;
+    transition: opacity 0.3s;
+}
+
+
+.edit-button {
+    background-color: #F28705 !important;
+    opacity: 0.8;
+}
+
+.edit-button:hover {
+    opacity: 1;
+}
+
+.delete-button {
+    background-color: #8B303F !important;
+    opacity: 0.8;
+}
+
+.delete-button:hover {
+    opacity: 1;
+}
+
+.save-button {
+    transition: opacity 0.3s;
+    color: white !important;
+    background-color: #2CA06C !important;
+    opacity: 0.8;
+}
+
+.save-button:hover {
+    opacity: 1;
+}
+
+
+.poll-form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.poll-form .poll-form-input {
+    margin: 0 0 1rem 0;
+}

@@ -1,0 +1,36 @@
+version: '3'
+services:
+  frontend:
+    image: poller-react:latest
+    build: .
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    ports:
+      - 3000:3000
+    command: npm start
+  app:
+    image: poller-service:latest
+    ports:
+      - "8080:8080"
+    build:
+      context: .
+    container_name: app
+    depends_on:
+        - database
+    environment: 
+        - DATABASE=database
+        - PORT=3306
+  database:
+    platform: linux/amd64
+    image: mysql:5.7
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: dev
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: secret
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
